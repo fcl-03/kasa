@@ -1,0 +1,51 @@
+.header {
+  padding: 40px 0; // padding vertical, largeur gérée par le container
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo img {
+  width: 210px; // desktop
+  height: auto;
+  display: block;
+}
+
+.header__nav {
+  display: flex;
+  gap: 60px;
+
+  a {
+    color: #000;              // évite le violet
+    text-decoration: none;    // pas de soulignement par défaut
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  a.active {
+    text-decoration: underline; // seulement le lien actif
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 0;
+  }
+
+  .header__logo img {
+    width: 145px; // maquette mobile
+  }
+
+  .header__nav {
+    gap: 26px;
+
+    a {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}

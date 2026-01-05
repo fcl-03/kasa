@@ -1,0 +1,45 @@
+.home {
+  margin-bottom: 50px; // espace avant le footer
+}
+.home__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; // espace banner -> gallery (desktop)
+}
+.home__gallery {
+  background: #f6f6f6;
+  border-radius: 25px;
+  padding: 56px 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 60px;
+}
+
+@media (max-width: 1024px) {
+  .home__gallery {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 32px 24px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    margin: 0; 
+  }
+  .home__gallery {
+    grid-template-columns: 1fr;
+    background: transparent; 
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+  }
+  .home__container {
+    gap: 20px; // espace banner -> cards en mobile
+  }
+  .home {
+    padding-bottom: 27px; // espace Gallery -> Footer (le même)
+    margin-bottom: 0;
+  }
+}

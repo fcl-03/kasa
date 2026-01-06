@@ -1,0 +1,49 @@
+.about {
+  margin-bottom: 50px;
+}
+
+.about__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px; // même logique que le reste (ajuste si tu as déjà une valeur globale)
+}
+
+.about__banner {
+  height: 223px;
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden; // pour que l’overlay respecte le border-radius
+}
+
+/* overlay sombre */
+.about__banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); // ajuste 0.25 → 0.4 selon la maquette
+}
+
+
+.about__collapses {
+  padding-top: 30px;
+  max-width: 1023px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .about__banner {
+    height: 111px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .about__collapses {
+    gap: 20px;
+    padding-top: 0px;
+  }
+}

@@ -1,7 +1,23 @@
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 20px; // base mobile
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif; /* ou la typo demandée */
+  color: #000;
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (min-width: 1024px) {

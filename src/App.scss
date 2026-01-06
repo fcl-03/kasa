@@ -1,3 +1,13 @@
+
+/* Container global (utilisé partout) */
+.container {
+  width: 100%;
+  max-width: 1240px;     /* Kasa maquette */
+  margin: 0 auto;
+  padding: 0 20px;       /* respiration sur les côtés */
+}
+
+/* structure app */
 .app {
   min-height: 100vh;
   display: flex;

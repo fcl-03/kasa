@@ -1,0 +1,61 @@
+.error {
+  /* Le Header et Footer sont déjà autour dans App.jsx.
+     Donc ici on centre juste le contenu dans l’espace “page”. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  /* respire un peu (évite que ça colle au header sur petits écrans) */
+  padding: 40px 20px;
+  padding-bottom: 100px;
+  gap: 80px;
+}
+
+.error__code {
+  margin: 0;
+  font-weight: 700;
+  font-size: 288px;
+  line-height: 1;
+  color: #ff6060;
+}
+
+.error__text {
+  margin: 0;
+  font-weight: 500;
+  font-size: 36px;
+  color: #ff6060;
+}
+
+.error__link {
+  margin-top: 40px;
+  font-size: 18px;
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .error {
+    padding: 10px 20px;
+    gap: 20px;
+  }
+
+  .error__code {
+    font-size: 96px;
+    margin-top: 70px;
+  }
+
+  .error__text {
+    margin-top: 70px;
+    font-size: 18px;
+    max-width: 220px; /* force le retour à la ligne comme la maquette */
+  }
+
+  .error__link {
+    margin-top: 80px;
+    font-size: 14px;
+  }
+}

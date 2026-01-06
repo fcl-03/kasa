@@ -12,10 +12,8 @@ function Housing() {
 
   // Pour l'instant : si pas trouvé, on affiche juste la page Error via redirection
   if (!logement) {
-    return <Navigate to="*" replace />;
+    return <Navigate to="/404" replace />;
   }
-
-  const [firstName, lastName] = logement.host.name.split(" ");
 
   return (
   <main className="housing">

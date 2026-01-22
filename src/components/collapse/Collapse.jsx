@@ -3,7 +3,7 @@ import "./Collapse.scss";
 
 function Collapse({ title, children, defaultOpen = false }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  const contentId = useId();
+  
   const contentRef = useRef(null);
 
   // Sert à animer max-height proprement
@@ -16,7 +16,7 @@ function Collapse({ title, children, defaultOpen = false }) {
         className="collapse__header"
         onClick={() => setIsOpen((v) => !v)}
         aria-expanded={isOpen}
-        aria-controls={contentId}
+        
       >
         <span className="collapse__title">{title}</span>
 
@@ -29,7 +29,7 @@ function Collapse({ title, children, defaultOpen = false }) {
       </button>
 
       <div
-        id={contentId}
+        
         className="collapse__content"
         style={{ maxHeight }}
         data-open={isOpen ? "true" : "false"}

@@ -10,7 +10,7 @@ function Housing() {
 
   const logement = logements.find((item) => item.id === id);
 
-  // Pour l'instant : si pas trouvé, on affiche juste la page Error via redirection
+  // si pas trouvé, on affiche juste la page Error via redirection
   if (!logement) {
     return <Navigate to="/404" replace />;
   }

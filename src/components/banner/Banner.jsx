@@ -1,4 +1,4 @@
-import './Banner.scss'
+import "./Banner.scss";
 
 function Banner({ image, text }) {
   return (
@@ -7,7 +7,7 @@ function Banner({ image, text }) {
       <div className="banner__overlay"></div>
       {text ? <h1 className="banner__title">{text}</h1> : null}
     </section>
-  )
+  );
 }
 
-export default Banner
+export default Banner;

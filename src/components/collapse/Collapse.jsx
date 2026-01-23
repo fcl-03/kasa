@@ -1,13 +1,23 @@
-import { useId, useRef, useState } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import "./Collapse.scss";
 
 function Collapse({ title, children, defaultOpen = false }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  
   const contentRef = useRef(null);
+  const wrapperRef = useRef(null);
 
-  // Sert à animer max-height proprement
-  const maxHeight = isOpen ? `${contentRef.current?.scrollHeight || 0}px` : "0px";
+  // useLayoutEffect pour éviter le flash visuel
+  useLayoutEffect(() => {
+    const wrapper = wrapperRef.current;
+    const content = contentRef.current;
+    if (!wrapper || !content) return;
+
+    if (isOpen) {
+      wrapper.style.maxHeight = `${content.scrollHeight}px`;
+    } else {
+      wrapper.style.maxHeight = "0px";
+    }
+  }, [isOpen]);
 
   return (
     <div className={`collapse ${isOpen ? "collapse--open" : "collapse--closed"}`}>
@@ -16,7 +26,6 @@ function Collapse({ title, children, defaultOpen = false }) {
         className="collapse__header"
         onClick={() => setIsOpen((v) => !v)}
         aria-expanded={isOpen}
-        
       >
         <span className="collapse__title">{title}</span>
 
@@ -29,9 +38,8 @@ function Collapse({ title, children, defaultOpen = false }) {
       </button>
 
       <div
-        
+        ref={wrapperRef}
         className="collapse__content"
-        style={{ maxHeight }}
         data-open={isOpen ? "true" : "false"}
       >
         <div ref={contentRef} className="collapse__contentInner">

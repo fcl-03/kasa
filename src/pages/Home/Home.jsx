@@ -1,8 +1,8 @@
-import logements from '../../data/logements.json'
-import Card from '../../components/card/Card'
-import Banner from '../../components/banner/Banner'
-import bannerHome from '../../assets/banner-home.png'
-import './Home.scss'
+import logements from "../../data/logements.json";
+import Card from "../../components/card/Card";
+import Banner from "../../components/banner/Banner";
+import bannerHome from "../../assets/banner-home.png";
+import "./Home.scss";
 
 function Home() {
   return (
@@ -22,7 +22,7 @@ function Home() {
         </section>
       </div>
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;
